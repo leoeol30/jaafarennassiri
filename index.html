@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attorney Jaafar ENNASSIRI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(180deg, #2563eb, #1e3a8a);
-            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f9fa;
+            color: #2d3748;
             margin: 0;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .rtl {
@@ -26,116 +31,174 @@
         }
 
         nav {
-            background: #1e3a8a;
-            padding: 1rem 0;
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(30, 58, 138, 0.98);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        nav select {
-            border: none;
+        .lang-select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
             padding: 0.5rem 1rem;
             border-radius: 4px;
-            background: white;
-            color: #1e40af;
-            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        header {
-            background: linear-gradient(90deg, rgba(30, 58, 138, 0.8), rgba(37, 99, 235, 0.8)), url('https://source.unsplash.com/1600x900/?law') center/cover no-repeat;
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
+        .lang-select:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        header img {
-            width: 180px;
-            height: 180px;
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(37, 99, 235, 0.9)),
+                        url('/api/placeholder/1920/1080') center/cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 1rem;
-            object-fit: cover;
-            max-width: 100%;
-            transition: transform 0.3s ease-in-out;
+            border: 4px solid white;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
         }
 
-        header img:hover {
-            transform: scale(1.1);
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            font-family: 'Playfair Display', serif;
-            margin-top: 1rem;
-        }
-
-        section {
+        .card {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        section:hover {
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+        .card h2 {
             color: #1e3a8a;
-            border-bottom: 2px solid #1e3a8a;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
             padding-bottom: 0.5rem;
         }
 
-        .flex.items-center i {
-            margin-right: 0.5rem;
-        }
-
-        footer {
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
             background: #1e3a8a;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+            border-radius: 2px;
         }
 
-        footer .social-icons a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            display: inline-block;
+        .rtl .card h2::after {
+            right: 0;
+            left: auto;
         }
 
-        footer .social-icons a:hover {
-            color: #63b3ed;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #f8f9fa;
+        }
+
+        .contact-item i {
+            color: #1e3a8a;
+            margin-right: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin: 1rem 0;
         }
 
         @media (max-width: 768px) {
-            header img {
-                width: 120px;
-                height: 120px;
+            .hero {
+                padding: 6rem 1rem;
             }
 
-            header {
-                padding: 4rem 0;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
+            .profile-img {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
 <body class="ltr">
-    <nav>
-        <div class="container mx-auto flex justify-between items-center">
+    <nav class="py-4 transition-all duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center">
-                <i data-feather="globe" class="w-6 h-6 mr-2 text-white"></i>
-                <select id="languageSelect">
+                <i data-feather="globe" class="w-5 h-5 mr-2 text-white"></i>
+                <select id="languageSelect" class="lang-select">
                     <option value="ar">العربية</option>
                     <option value="fr">Français</option>
                     <option value="en">English</option>
@@ -144,94 +207,147 @@
         </div>
     </nav>
 
-    <header>
-        <div class="content container mx-auto">
-            <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI">
-            <h1 data-translate="title"></h1>
-            <p data-translate="subtitle"></p>
+    <section class="hero">
+        <div class="container mx-auto px-4 text-center text-white relative">
+            <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI" class="profile-img mx-auto mb-8 animate__animated animate__fadeIn">
+            <h1 class="serif-font text-5xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInUp" data-translate="title"></h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate__animated animate__fadeInUp animate__delay-1s" data-translate="subtitle"></p>
         </div>
-    </header>
+    </section>
 
-    <main class="container mx-auto py-8 px-4">
-        <section>
-            <h2 data-translate="about_section"></h2>
-            <p data-translate="about_details"></p>
-        </section>
+    <main class="container mx-auto px-4 py-16 -mt-20 relative z-10">
+        <div class="card p-8 mb-12 animate__animated animate__fadeInUp">
+            <h2 class="serif-font" data-translate="about_section"></h2>
+            <p class="text-lg leading-relaxed" data-translate="about_details"></p>
+        </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <section>
-                <h2 data-translate="contact"></h2>
+            <div class="card p-8 animate__animated animate__fadeInLeft">
+                <h2 class="serif-font" data-translate="contact"></h2>
                 <div class="space-y-4">
-                    <div class="flex items-center">
-                        <i data-feather="map-pin" class="w-6 h-6 text-blue-900"></i>
+                    <div class="contact-item">
+                        <i data-feather="map-pin" class="w-6 h-6"></i>
                         <p data-translate="address"></p>
                     </div>
-                    <div class="flex items-center">
-                        <i data-feather="phone" class="w-6 h-6 text-blue-900"></i>
+                    <div class="contact-item">
+                        <i data-feather="phone" class="w-6 h-6"></i>
                         <p data-translate="phone"></p>
                     </div>
-                    <div class="flex items-center">
-                        <i data-feather="mail" class="w-6 h-6 text-blue-900"></i>
+                    <div class="contact-item">
+                        <i data-feather="mail" class="w-6 h-6"></i>
                         <p>jaafarennassiri@gmail.com</p>
                     </div>
                     <a href="https://wa.me/212663757758" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center text-green-600 hover:text-green-700 transition">
+                       class="contact-item text-green-600 hover:text-green-700">
                         <i data-feather="message-circle" class="w-6 h-6"></i>
                         <p data-translate="whatsapp"></p>
                     </a>
                 </div>
-            </section>
+            </div>
 
-            <section>
-                <h2 data-translate="business_hours"></h2>
-                <ul>
-                    <li><span data-translate="weekday_hours"></span></li>
-                    <li><span data-translate="saturday_hours"></span></li>
-                    <li><span data-translate="sunday_hours"></span></li>
+            <div class="card p-8 animate__animated animate__fadeInRight">
+                <h2 class="serif-font" data-translate="business_hours"></h2>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
+                        <span data-translate="weekday_hours"></span>
+                    </li>
+                    <li class="flex items-center">
+                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
+                        <span data-translate="saturday_hours"></span>
+                    </li>
+                    <li class="flex items-center">
+                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
+                        <span data-translate="sunday_hours"></span>
+                    </li>
                 </ul>
-            </section>
+            </div>
         </div>
 
-        <section>
-            <h2 data-translate="office"></h2>
-            <div>
+        <div class="card p-8 my-12 animate__animated animate__fadeInUp">
+            <h2 class="serif-font" data-translate="office"></h2>
+            <div class="rounded-lg overflow-hidden shadow-lg">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma" 
-                    class="w-full h-64 border-0" allowfullscreen="" loading="lazy"></iframe>
+                    class="w-full h-96 border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2 data-translate="reviews"></h2>
-            <div>
-                <div id="review-ar" class="hidden">
-                    <p>"خدمة رائعة ومحترفة. شكرا جزيلا!"</p>
-                    <p>- محمد الأحمد</p>
+        <div class="card p-8 animate__animated animate__fadeInUp">
+            <h2 class="serif-font" data-translate="reviews"></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            DE
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Daria Emmerich</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic mb-4">"Jaafar is a very nice, helpful and professional lawyer. Speaks English well and is always helpful. I felt well represented and would ask him for help again at any time."</p>
+                    <p class="text-sm text-gray-600">a year ago</p>
                 </div>
-                <div id="review-fr" class="hidden">
-                    <p>"Service exceptionnel et attentionné. Hautement recommandé!"</p>
-                    <p>- Jean Dupont</p>
+
+                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            LI
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Léo Idir</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic mb-4">"I had the privilege of working with Jaafar on my father's legal case, and I cannot speak highly enough of his professionalism and expertise. From the very beginning, Jaafar demonstrated a deep understanding of the law..."</p>
+                    <p class="text-sm text-gray-600">a month ago</p>
                 </div>
-                <div id="review-en">
-                    <p>"Amazing service, very professional. Highly recommend!"</p>
-                    <p>- John Smith</p>
-                    <p><strong>Rating: 5/5 Stars ⭐⭐⭐⭐⭐</strong></p>
+
+                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            CM
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Claudio Massei</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic mb-4">"Great lawyer, helped me get out of trouble with competence. He knows his job very well! Speaks excellent English, highly recommended."</p>
+                    <p class="text-sm text-gray-600">2 months ago</p>
+                </div>
+
+                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            PS
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Piotr Antoni Sporek</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic mb-4">"Thank you very much for the information provided 🇵🇱 Chokran 🙏"</p>
+                    <p class="text-sm text-gray-600">2 months ago</p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>© 2024 <span data-translate="title"></span></p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/jaafar-ennassiri-a343ba5b/" target="_blank">
-                <i data-feather="linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/jaafarofficiel1/" target="_blank">
-                <i data-feather="instagram"></i>
-            </a>
-            <a href="https://web.facebook.com/ennassiri" target="_blank">
-                <i data-feather="facebook"></i>
-            </a>
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-6">© 2024 <span data-translate="title"></span></p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/jaafar-ennassiri-a343ba5b/" target="_blank" class="social-link">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/jaafarofficiel1/" target="_blank" class="social-link">
+                    <i data-feather="instagram"></i>
+                </a>
+                <a href="https://web.facebook.com/ennassiri" target="_blank" class="social-link">
+                    <i data-feather="facebook"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -269,12 +385,11 @@
                 sunday_hours: 'Dimanche : Fermé',
                 reviews: 'Avis des clients'
             },
-
             en: {
                 title: 'Attorney Jaafar ENNASSIRI',
                 subtitle: 'Lawyer at the Court of Appeal of Agadir',
-                about_section: 'About Jaafar Ennassiri',
-                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law and family law.',
+                about_section: 'About Attorney Jaafar Ennassiri',
+                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law and family law, dedicated to providing exceptional legal services.',
                 contact: 'Contact Information',
                 address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
                 phone: '06 63 75 77 58',
@@ -284,26 +399,83 @@
                 weekday_hours: 'Monday to Friday: 9:00 AM - 5:00 PM',
                 saturday_hours: 'Saturday: 10:00 AM - 2:00 PM',
                 sunday_hours: 'Sunday: Closed',
-                reviews: 'Customer Reviews'
+                reviews: 'Client Reviews'
             }
         };
 
+        // Initialize Feather Icons
         feather.replace();
 
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher functionality
         function updateContent(language) {
             document.documentElement.lang = language;
             document.body.className = language === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all translatable elements
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
-                element.textContent = translations[language][key];
+                if (translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Update RTL/LTR specific styles
+            document.querySelectorAll('.contact-item i').forEach(icon => {
+                if (language === 'ar') {
+                    icon.style.marginRight = '0';
+                    icon.style.marginLeft = '1rem';
+                } else {
+                    icon.style.marginRight = '1rem';
+                    icon.style.marginLeft = '0';
+                }
             });
         }
 
+        // Language selector event listener
         document.getElementById('languageSelect').addEventListener('change', (e) => {
             updateContent(e.target.value);
         });
 
+        // Initialize with Arabic language
         updateContent('ar');
+
+        // Add smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', entry.target.dataset.animation);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate__animated').forEach(element => {
+            observer.observe(element);
+        });
     </script>
 </body>
 </html>
