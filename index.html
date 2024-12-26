@@ -19,23 +19,20 @@
         header {
             background: linear-gradient(90deg, #1e3a8a, #3b82f6);
             color: white;
+            padding: 4rem 0;
         }
         header img {
             border: 4px solid white;
         }
-        .btn {
-            background: #1e3a8a;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #2563eb;
-        }
         footer {
             background: #1e3a8a;
             color: white;
+        }
+        .highlight {
+            background: #2563eb;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
         }
     </style>
 </head>
@@ -53,8 +50,8 @@
         </div>
     </nav>
 
-    <header class="py-16">
-        <div class="container mx-auto text-center">
+    <header class="text-center">
+        <div class="container mx-auto">
             <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI" class="w-40 h-40 object-cover rounded-full mx-auto shadow-lg">
             <h1 class="text-4xl font-bold mt-4" data-translate="title"></h1>
             <p class="text-xl mt-2" data-translate="subtitle"></p>
@@ -63,7 +60,12 @@
     </header>
 
     <main class="container mx-auto py-8 px-4">
-        <div class="grid md:grid-cols-2 gap-8">
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="about_section"></h2>
+            <p data-translate="about_details"></p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
             <section class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="contact"></h2>
                 <div class="space-y-4">
@@ -84,12 +86,16 @@
             </section>
 
             <section class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="expertise"></h2>
-                <ul id="expertiseList" class="space-y-2"></ul>
+                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="business_hours"></h2>
+                <ul class="space-y-2">
+                    <li><span class="highlight" data-translate="weekday_hours"></span></li>
+                    <li><span class="highlight" data-translate="saturday_hours"></span></li>
+                    <li><span class="highlight" data-translate="sunday_hours"></span></li>
+                </ul>
             </section>
         </div>
 
-        <section class="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="office"></h2>
             <div class="aspect-video">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma" 
@@ -97,7 +103,7 @@
             </div>
         </section>
 
-        <section class="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <section class="bg-white rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="reviews"></h2>
             <div class="space-y-4" id="reviews-section">
                 <div id="review-ar" class="hidden">
@@ -127,60 +133,54 @@
                 title: 'الأستاذ جعفر الناصري',
                 subtitle: 'محامي لدى محكمة الاستئناف بأكادير',
                 about: 'محام متخصص في القانون المدني والتجاري والأسرة',
+                about_section: 'عن الأستاذ جعفر الناصري',
+                about_details: 'الأستاذ جعفر الناصري محام ذو خبرة في القانون المدني وقانون الأسرة والقانون التجاري. يشتهر بتفانيه ونهجه الذي يضع العميل أولاً، وقد ساعد العديد من العملاء في تحقيق نتائج إيجابية في القضايا الصعبة.',
                 contact: 'معلومات الاتصال',
                 address: 'بلوك 1 رقم 121 زنقة مكناس الحي الصناعي اكادير',
                 phone: '58 77 75 63 06',
                 whatsapp: 'تواصل معنا عبر الواتساب',
                 office: 'ابحث عن المكتب',
-                expertise: 'مجالات الخبرة',
-                reviews: 'آراء العملاء',
-                areas: [
-                    'القانون المدني',
-                    'القانون التجاري',
-                    'قانون الأسرة',
-                    'القانون العقاري',
-                    'القانون الجنائي'
-                ]
+                business_hours: 'ساعات العمل',
+                weekday_hours: 'من الاثنين إلى الجمعة: 9:00 صباحًا - 5:00 مساءً',
+                saturday_hours: 'السبت: 10:00 صباحًا - 2:00 مساءً',
+                sunday_hours: 'الأحد: مغلق',
+                reviews: 'آراء العملاء'
             },
             fr: {
                 languageSelect: 'Choisir la langue',
                 title: 'Maître Jaafar ENNASSIRI',
                 subtitle: 'Avocat près la Cour d\'Appel d\'Agadir',
                 about: 'Avocat spécialisé en droit civil, commercial et familial',
+                about_section: 'À propos de Maître Jaafar Ennassiri',
+                about_details: 'Maître Jaafar Ennassiri est un avocat expérimenté spécialisé en droit civil, droit de la famille et droit commercial. Connu pour son dévouement et son approche axée sur le client, il a aidé de nombreux clients à obtenir des résultats favorables dans des affaires difficiles.',
                 contact: 'Coordonnées',
                 address: 'Bloc 1 N°121 Rue Meknès Quartier Industriel, Agadir',
                 phone: '06 63 75 77 58',
                 whatsapp: 'Nous contacter sur WhatsApp',
                 office: 'Trouver le bureau',
-                expertise: 'Domaines d\'expertise',
-                reviews: 'Avis des clients',
-                areas: [
-                    'Droit civil',
-                    'Droit commercial',
-                    'Droit de la famille',
-                    'Droit immobilier',
-                    'Droit pénal'
-                ]
+                business_hours: 'Horaires d\'ouverture',
+                weekday_hours: 'Du lundi au vendredi : 9h00 - 17h00',
+                saturday_hours: 'Samedi : 10h00 - 14h00',
+                sunday_hours: 'Dimanche : Fermé',
+                reviews: 'Avis des clients'
             },
             en: {
                 languageSelect: 'Select Language',
                 title: 'Attorney Jaafar ENNASSIRI',
                 subtitle: 'Lawyer at the Court of Appeal of Agadir',
                 about: 'Specialized in civil, commercial and family law',
+                about_section: 'About Jaafar Ennassiri',
+                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law, family law, and commercial law. Known for his dedication and client-first approach, he has helped numerous clients achieve favorable outcomes in challenging cases.',
                 contact: 'Contact Information',
                 address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
                 phone: '06 63 75 77 58',
                 whatsapp: 'Contact us on WhatsApp',
                 office: 'Find the Office',
-                expertise: 'Areas of Expertise',
-                reviews: 'Customer Reviews',
-                areas: [
-                    'Civil Law',
-                    'Commercial Law',
-                    'Family Law',
-                    'Real Estate Law',
-                    'Criminal Law'
-                ]
+                business_hours: 'Business Hours',
+                weekday_hours: 'Monday to Friday: 9:00 AM - 5:00 PM',
+                saturday_hours: 'Saturday: 10:00 AM - 2:00 PM',
+                sunday_hours: 'Sunday: Closed',
+                reviews: 'Customer Reviews'
             }
         };
 
@@ -192,17 +192,6 @@
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 element.textContent = translations[language][key];
-            });
-            const expertiseList = document.getElementById('expertiseList');
-            expertiseList.innerHTML = '';
-            translations[language].areas.forEach(area => {
-                const li = document.createElement('li');
-                li.className = 'flex items-center gap-2';
-                li.innerHTML = `
-                    <div class="w-2 h-2 bg-blue-900 rounded-full"></div>
-                    <span>${area}</span>
-                `;
-                expertiseList.appendChild(li);
             });
 
             document.querySelectorAll("#reviews-section > div").forEach(review => review.classList.add("hidden"));
