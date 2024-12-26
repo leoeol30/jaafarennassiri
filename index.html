@@ -13,6 +13,30 @@
         .ltr {
             direction: ltr;
         }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            color: white;
+        }
+        header img {
+            border: 4px solid white;
+        }
+        .btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+        footer {
+            background: #1e3a8a;
+            color: white;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50">
@@ -29,22 +53,18 @@
         </div>
     </nav>
 
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto py-8 px-4">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <img src="/jaafarennassiri/images/justice.jpg" alt="Attorney Jaafar ENNASSIRI" class="w-40 h-40 object-cover rounded-lg shadow-lg">
-                <div>
-                    <h1 class="text-3xl font-bold text-blue-900" data-translate="title"></h1>
-                    <p class="text-xl text-gray-600 mt-2" data-translate="subtitle"></p>
-                    <p class="text-gray-600 mt-2" data-translate="about"></p>
-                </div>
-            </div>
+    <header class="py-16">
+        <div class="container mx-auto text-center">
+            <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI" class="w-40 h-40 object-cover rounded-full mx-auto shadow-lg">
+            <h1 class="text-4xl font-bold mt-4" data-translate="title"></h1>
+            <p class="text-xl mt-2" data-translate="subtitle"></p>
+            <p class="text-gray-200 mt-4" data-translate="about"></p>
         </div>
     </header>
 
     <main class="container mx-auto py-8 px-4">
         <div class="grid md:grid-cols-2 gap-8">
-            <section class="bg-white rounded-lg shadow p-6">
+            <section class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="contact"></h2>
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
@@ -63,13 +83,13 @@
                 </div>
             </section>
 
-            <section class="bg-white rounded-lg shadow p-6">
+            <section class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="expertise"></h2>
                 <ul id="expertiseList" class="space-y-2"></ul>
             </section>
         </div>
 
-        <section class="mt-8 bg-white rounded-lg shadow p-6">
+        <section class="mt-8 bg-white rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="office"></h2>
             <div class="aspect-video">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma"
@@ -78,14 +98,11 @@
         </section>
     </main>
 
-    <footer class="bg-blue-900 text-white py-4 mt-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>© 2024 <span data-translate="title"></span></p>
-        </div>
+    <footer class="py-8 text-center">
+        <p>© 2024 <span data-translate="title"></span></p>
     </footer>
 
     <script>
-        // Translations object
         const translations = {
             ar: {
                 languageSelect: 'اختر اللغة',
@@ -146,21 +163,15 @@
             }
         };
 
-        // Initialize Feather icons
         feather.replace();
 
-        // Function to update content based on selected language
         function updateContent(language) {
             document.documentElement.lang = language;
             document.body.className = `min-h-screen bg-gray-50 ${language === 'ar' ? 'rtl' : 'ltr'}`;
-            
-            // Update all elements with data-translate attribute
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 element.textContent = translations[language][key];
             });
-
-            // Update expertise list
             const expertiseList = document.getElementById('expertiseList');
             expertiseList.innerHTML = '';
             translations[language].areas.forEach(area => {
@@ -174,12 +185,10 @@
             });
         }
 
-        // Language selector event listener
         document.getElementById('languageSelect').addEventListener('change', (e) => {
             updateContent(e.target.value);
         });
 
-        // Initialize with Arabic
         updateContent('ar');
     </script>
 </body>
