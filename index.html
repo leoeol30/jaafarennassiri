@@ -7,41 +7,93 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
         .rtl {
             direction: rtl;
+            text-align: right;
         }
+
         .ltr {
             direction: ltr;
+            text-align: left;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        nav {
+            background: linear-gradient(90deg, #1e40af, #1d4ed8);
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        nav select {
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background: white;
+            color: #1e40af;
+        }
+
         header {
-            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(90deg, #1e40af, #1d4ed8);
             color: white;
-            padding: 4rem 0;
+            padding: 5rem 0;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
+
         header img {
-            border: 4px solid white;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 1rem;
         }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+            border-bottom: 2px solid #1e40af;
+            padding-bottom: 0.5rem;
+        }
+
         footer {
-            background: #1e3a8a;
+            background: #1e40af;
             color: white;
-        }
-        .highlight {
-            background: #2563eb;
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
         }
     </style>
 </head>
-<body class="min-h-screen bg-gray-50">
-    <nav class="bg-blue-900 text-white p-4">
+<body class="ltr">
+    <nav>
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <i data-feather="globe" class="w-6 h-6 mr-2"></i>
-                <select id="languageSelect" class="bg-blue-800 text-white p-2 rounded">
+                <i data-feather="globe" class="w-6 h-6 mr-2 text-white"></i>
+                <select id="languageSelect">
                     <option value="ar">العربية</option>
                     <option value="fr">Français</option>
                     <option value="en">English</option>
@@ -50,91 +102,88 @@
         </div>
     </nav>
 
-    <header class="text-center">
+    <header>
         <div class="container mx-auto">
-            <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI" class="w-40 h-40 object-cover rounded-full mx-auto shadow-lg">
-            <h1 class="text-4xl font-bold mt-4" data-translate="title"></h1>
-            <p class="text-xl mt-2" data-translate="subtitle"></p>
-            <p class="text-gray-200 mt-4" data-translate="about"></p>
+            <img src="/jaafarennassiri/images/jaafar.png" alt="Attorney Jaafar ENNASSIRI">
+            <h1 data-translate="title"></h1>
+            <p data-translate="subtitle"></p>
         </div>
     </header>
 
     <main class="container mx-auto py-8 px-4">
-        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="about_section"></h2>
+        <section>
+            <h2 data-translate="about_section"></h2>
             <p data-translate="about_details"></p>
         </section>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <section class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="contact"></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <section>
+                <h2 data-translate="contact"></h2>
                 <div class="space-y-4">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center">
                         <i data-feather="map-pin" class="w-6 h-6 text-blue-900"></i>
                         <p data-translate="address"></p>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center">
                         <i data-feather="phone" class="w-6 h-6 text-blue-900"></i>
                         <p data-translate="phone"></p>
                     </div>
                     <a href="https://wa.me/212663757758" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center gap-3 text-green-600 hover:text-green-700 transition-colors">
+                       class="flex items-center text-green-600 hover:text-green-700 transition">
                         <i data-feather="message-circle" class="w-6 h-6"></i>
                         <p data-translate="whatsapp"></p>
                     </a>
                 </div>
             </section>
 
-            <section class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="business_hours"></h2>
-                <ul class="space-y-2">
-                    <li><span class="highlight" data-translate="weekday_hours"></span></li>
-                    <li><span class="highlight" data-translate="saturday_hours"></span></li>
-                    <li><span class="highlight" data-translate="sunday_hours"></span></li>
+            <section>
+                <h2 data-translate="business_hours"></h2>
+                <ul>
+                    <li><span data-translate="weekday_hours"></span></li>
+                    <li><span data-translate="saturday_hours"></span></li>
+                    <li><span data-translate="sunday_hours"></span></li>
                 </ul>
             </section>
         </div>
 
-        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="office"></h2>
-            <div class="aspect-video">
+        <section>
+            <h2 data-translate="office"></h2>
+            <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma" 
-                    class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                    class="w-full h-64 border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="reviews"></h2>
-            <div class="space-y-4" id="reviews-section">
+        <section>
+            <h2 data-translate="reviews"></h2>
+            <div>
                 <div id="review-ar" class="hidden">
-                    <p class="text-gray-700">"خدمة رائعة ومحترفة. شكرا جزيلا!"</p>
-                    <p class="text-sm text-gray-500">- محمد الأحمد</p>
+                    <p>"خدمة رائعة ومحترفة. شكرا جزيلا!"</p>
+                    <p>- محمد الأحمد</p>
                 </div>
                 <div id="review-fr" class="hidden">
-                    <p class="text-gray-700">"Service exceptionnel et attentionné. Hautement recommandé!"</p>
-                    <p class="text-sm text-gray-500">- Jean Dupont</p>
+                    <p>"Service exceptionnel et attentionné. Hautement recommandé!"</p>
+                    <p>- Jean Dupont</p>
                 </div>
                 <div id="review-en" class="hidden">
-                    <p class="text-gray-700">"Amazing service, very professional. Highly recommend!"</p>
-                    <p class="text-sm text-gray-500">- John Smith</p>
+                    <p>"Amazing service, very professional. Highly recommend!"</p>
+                    <p>- John Smith</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-8 text-center">
+    <footer>
         <p>© 2024 <span data-translate="title"></span></p>
     </footer>
 
     <script>
         const translations = {
             ar: {
-                languageSelect: 'اختر اللغة',
                 title: 'الأستاذ جعفر الناصري',
                 subtitle: 'محامي لدى محكمة الاستئناف بأكادير',
-                about: 'محام متخصص في القانون المدني والتجاري والأسرة',
                 about_section: 'عن الأستاذ جعفر الناصري',
-                about_details: 'الأستاذ جعفر الناصري محام ذو خبرة في القانون المدني وقانون الأسرة والقانون التجاري. يشتهر بتفانيه ونهجه الذي يضع العميل أولاً، وقد ساعد العديد من العملاء في تحقيق نتائج إيجابية في القضايا الصعبة.',
+                about_details: 'الأستاذ جعفر الناصري محام ذو خبرة في القانون المدني وقانون الأسرة والقانون التجاري.',
                 contact: 'معلومات الاتصال',
                 address: 'بلوك 1 رقم 121 زنقة مكناس الحي الصناعي اكادير',
                 phone: '58 77 75 63 06',
@@ -147,12 +196,10 @@
                 reviews: 'آراء العملاء'
             },
             fr: {
-                languageSelect: 'Choisir la langue',
                 title: 'Maître Jaafar ENNASSIRI',
                 subtitle: 'Avocat près la Cour d\'Appel d\'Agadir',
-                about: 'Avocat spécialisé en droit civil, commercial et familial',
                 about_section: 'À propos de Maître Jaafar Ennassiri',
-                about_details: 'Maître Jaafar Ennassiri est un avocat expérimenté spécialisé en droit civil, droit de la famille et droit commercial. Connu pour son dévouement et son approche axée sur le client, il a aidé de nombreux clients à obtenir des résultats favorables dans des affaires difficiles.',
+                about_details: 'Maître Jaafar Ennassiri est un avocat expérimenté spécialisé en droit civil et commercial.',
                 contact: 'Coordonnées',
                 address: 'Bloc 1 N°121 Rue Meknès Quartier Industriel, Agadir',
                 phone: '06 63 75 77 58',
@@ -165,12 +212,10 @@
                 reviews: 'Avis des clients'
             },
             en: {
-                languageSelect: 'Select Language',
                 title: 'Attorney Jaafar ENNASSIRI',
                 subtitle: 'Lawyer at the Court of Appeal of Agadir',
-                about: 'Specialized in civil, commercial and family law',
                 about_section: 'About Jaafar Ennassiri',
-                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law, family law, and commercial law. Known for his dedication and client-first approach, he has helped numerous clients achieve favorable outcomes in challenging cases.',
+                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law and family law.',
                 contact: 'Contact Information',
                 address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
                 phone: '06 63 75 77 58',
@@ -188,14 +233,11 @@
 
         function updateContent(language) {
             document.documentElement.lang = language;
-            document.body.className = `min-h-screen bg-gray-50 ${language === 'ar' ? 'rtl' : 'ltr'}`;
+            document.body.className = language === 'ar' ? 'rtl' : 'ltr';
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 element.textContent = translations[language][key];
             });
-
-            document.querySelectorAll("#reviews-section > div").forEach(review => review.classList.add("hidden"));
-            document.getElementById(`review-${language}`).classList.remove("hidden");
         }
 
         document.getElementById('languageSelect').addEventListener('change', (e) => {
