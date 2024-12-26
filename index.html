@@ -48,21 +48,24 @@
         }
 
         header img {
-            width: 140px;
-            height: 140px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 5px solid white;
             margin-bottom: 1rem;
+            object-fit: cover;
+            max-width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
-        }
-
-        header p {
-            font-size: 1.3rem;
             margin-top: 1rem;
         }
 
@@ -88,6 +91,10 @@
             padding-bottom: 0.5rem;
         }
 
+        .flex.items-center i {
+            margin-right: 0.5rem;
+        }
+
         footer {
             background: #1e3a8a;
             color: white;
@@ -95,14 +102,31 @@
             text-align: center;
         }
 
-        footer a {
-            color: #63b3ed;
-            margin: 0 10px;
+        footer .social-icons a {
+            margin: 0 15px;
+            color: white;
             text-decoration: none;
+            font-size: 1.5rem;
+            display: inline-block;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        footer .social-icons a:hover {
+            color: #63b3ed;
+        }
+
+        @media (max-width: 768px) {
+            header img {
+                width: 120px;
+                height: 120px;
+            }
+
+            header {
+                padding: 4rem 0;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -187,9 +211,10 @@
                     <p>"Service exceptionnel et attentionné. Hautement recommandé!"</p>
                     <p>- Jean Dupont</p>
                 </div>
-                <div id="review-en" class="hidden">
+                <div id="review-en">
                     <p>"Amazing service, very professional. Highly recommend!"</p>
                     <p>- John Smith</p>
+                    <p><strong>Rating: 5/5 Stars ⭐⭐⭐⭐⭐</strong></p>
                 </div>
             </div>
         </section>
@@ -197,10 +222,16 @@
 
     <footer>
         <p>© 2024 <span data-translate="title"></span></p>
-        <div>
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/jaafar-ennassiri-a343ba5b/" target="_blank">
+                <i data-feather="linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/jaafarofficiel1/" target="_blank">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://web.facebook.com/ennassiri" target="_blank">
+                <i data-feather="facebook"></i>
+            </a>
         </div>
     </footer>
 
