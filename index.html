@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attorney Jaafar ENNASSIRI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <style>
+        .rtl {
+            direction: rtl;
+        }
+        .ltr {
+            direction: ltr;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i data-feather="globe" class="w-6 h-6 mr-2"></i>
+                <select id="languageSelect" class="bg-blue-800 text-white p-2 rounded">
+                    <option value="ar">العربية</option>
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto py-8 px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img src="/api/placeholder/160/160" alt="Attorney Jaafar ENNASSIRI" class="w-40 h-40 object-cover rounded-lg shadow-lg">
+                <div>
+                    <h1 class="text-3xl font-bold text-blue-900" data-translate="title"></h1>
+                    <p class="text-xl text-gray-600 mt-2" data-translate="subtitle"></p>
+                    <p class="text-gray-600 mt-2" data-translate="about"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+            <section class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="contact"></h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i data-feather="map-pin" class="w-6 h-6 text-blue-900"></i>
+                        <p data-translate="address"></p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-feather="phone" class="w-6 h-6 text-blue-900"></i>
+                        <p data-translate="phone"></p>
+                    </div>
+                    <a href="https://wa.me/212663757758" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-3 text-green-600 hover:text-green-700 transition-colors">
+                        <i data-feather="message-circle" class="w-6 h-6"></i>
+                        <p data-translate="whatsapp"></p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="expertise"></h2>
+                <ul id="expertiseList" class="space-y-2"></ul>
+            </section>
+        </div>
+
+        <section class="mt-8 bg-white rounded-lg shadow p-6">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="office"></h2>
+            <div class="aspect-video">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma"
+                    class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 <span data-translate="title"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Translations object
+        const translations = {
+            ar: {
+                languageSelect: 'اختر اللغة',
+                title: 'الأستاذ جعفر الناصري',
+                subtitle: 'محامي لدى محكمة الاستئناف بأكادير',
+                about: 'محام متخصص في القانون المدني والتجاري والأسرة',
+                contact: 'معلومات الاتصال',
+                address: 'بلوك 1 رقم 121 زنقة مكناس الحي الصناعي اكادير',
+                phone: '06 63 75 77 58',
+                whatsapp: 'تواصل معنا عبر الواتساب',
+                office: 'مكتب المحاماة',
+                expertise: 'مجالات الخبرة',
+                areas: [
+                    'القانون المدني',
+                    'القانون التجاري',
+                    'قانون الأسرة',
+                    'القانون العقاري',
+                    'القانون الجنائي'
+                ]
+            },
+            fr: {
+                languageSelect: 'Choisir la langue',
+                title: 'Maître Jaafar ENNASSIRI',
+                subtitle: 'Avocat près la Cour d\'Appel d\'Agadir',
+                about: 'Avocat spécialisé en droit civil, commercial et familial',
+                contact: 'Coordonnées',
+                address: 'Bloc 1 N°121 Rue Meknès Quartier Industriel, Agadir',
+                phone: '06 63 75 77 58',
+                whatsapp: 'Nous contacter sur WhatsApp',
+                office: 'Cabinet d\'Avocat',
+                expertise: 'Domaines d\'expertise',
+                areas: [
+                    'Droit civil',
+                    'Droit commercial',
+                    'Droit de la famille',
+                    'Droit immobilier',
+                    'Droit pénal'
+                ]
+            },
+            en: {
+                languageSelect: 'Select Language',
+                title: 'Attorney Jaafar ENNASSIRI',
+                subtitle: 'Lawyer at the Court of Appeal of Agadir',
+                about: 'Specialized in civil, commercial and family law',
+                contact: 'Contact Information',
+                address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
+                phone: '06 63 75 77 58',
+                whatsapp: 'Contact us on WhatsApp',
+                office: 'Law Office',
+                expertise: 'Areas of Expertise',
+                areas: [
+                    'Civil Law',
+                    'Commercial Law',
+                    'Family Law',
+                    'Real Estate Law',
+                    'Criminal Law'
+                ]
+            }
+        };
+
+        // Initialize Feather icons
+        feather.replace();
+
+        // Function to update content based on selected language
+        function updateContent(language) {
+            document.documentElement.lang = language;
+            document.body.className = `min-h-screen bg-gray-50 ${language === 'ar' ? 'rtl' : 'ltr'}`;
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                element.textContent = translations[language][key];
+            });
+
+            // Update expertise list
+            const expertiseList = document.getElementById('expertiseList');
+            expertiseList.innerHTML = '';
+            translations[language].areas.forEach(area => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-2';
+                li.innerHTML = `
+                    <div class="w-2 h-2 bg-blue-900 rounded-full"></div>
+                    <span>${area}</span>
+                `;
+                expertiseList.appendChild(li);
+            });
+        }
+
+        // Language selector event listener
+        document.getElementById('languageSelect').addEventListener('change', (e) => {
+            updateContent(e.target.value);
+        });
+
+        // Initialize with Arabic
+        updateContent('ar');
+    </script>
+</body>
+</html>
