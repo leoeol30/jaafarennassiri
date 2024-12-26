@@ -92,8 +92,26 @@
         <section class="mt-8 bg-white rounded-lg shadow-lg p-6">
             <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="office"></h2>
             <div class="aspect-video">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.9762765533085!2d-9.598898684885114!3d30.406796581750277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e6d0b2eb47%3A0x76e24b8e5f33ba14!2sCabinet%20Me%20Jaafar%20ENNASSIRI!5e0!3m2!1sen!2sma!4v1640000000000!5m2!1sen!2sma" 
                     class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section class="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4" data-translate="reviews"></h2>
+            <div class="space-y-4" id="reviews-section">
+                <div id="review-ar" class="hidden">
+                    <p class="text-gray-700">"خدمة رائعة ومحترفة. شكرا جزيلا!"</p>
+                    <p class="text-sm text-gray-500">- محمد الأحمد</p>
+                </div>
+                <div id="review-fr" class="hidden">
+                    <p class="text-gray-700">"Service exceptionnel et attentionné. Hautement recommandé!"</p>
+                    <p class="text-sm text-gray-500">- Jean Dupont</p>
+                </div>
+                <div id="review-en" class="hidden">
+                    <p class="text-gray-700">"Amazing service, very professional. Highly recommend!"</p>
+                    <p class="text-sm text-gray-500">- John Smith</p>
+                </div>
             </div>
         </section>
     </main>
@@ -113,8 +131,9 @@
                 address: 'بلوك 1 رقم 121 زنقة مكناس الحي الصناعي اكادير',
                 phone: '58 77 75 63 06',
                 whatsapp: 'تواصل معنا عبر الواتساب',
-                office: 'مكتب المحاماة',
+                office: 'ابحث عن المكتب',
                 expertise: 'مجالات الخبرة',
+                reviews: 'آراء العملاء',
                 areas: [
                     'القانون المدني',
                     'القانون التجاري',
@@ -132,8 +151,9 @@
                 address: 'Bloc 1 N°121 Rue Meknès Quartier Industriel, Agadir',
                 phone: '06 63 75 77 58',
                 whatsapp: 'Nous contacter sur WhatsApp',
-                office: 'Cabinet d\'Avocat',
+                office: 'Trouver le bureau',
                 expertise: 'Domaines d\'expertise',
+                reviews: 'Avis des clients',
                 areas: [
                     'Droit civil',
                     'Droit commercial',
@@ -151,8 +171,9 @@
                 address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
                 phone: '06 63 75 77 58',
                 whatsapp: 'Contact us on WhatsApp',
-                office: 'Law Office',
+                office: 'Find the Office',
                 expertise: 'Areas of Expertise',
+                reviews: 'Customer Reviews',
                 areas: [
                     'Civil Law',
                     'Commercial Law',
@@ -183,6 +204,9 @@
                 `;
                 expertiseList.appendChild(li);
             });
+
+            document.querySelectorAll("#reviews-section > div").forEach(review => review.classList.add("hidden"));
+            document.getElementById(`review-${language}`).classList.remove("hidden");
         }
 
         document.getElementById('languageSelect').addEventListener('change', (e) => {
