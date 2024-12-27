@@ -216,34 +216,58 @@
     </section>
 
     <main class="container mx-auto px-4 py-16 -mt-20 relative z-10">
-        <div class="card p-8 mb-12 animate__animated animate__fadeInUp">
-            <h2 class="serif-font" data-translate="about_section"></h2>
-            <p class="text-lg leading-relaxed" data-translate="about_details"></p>
+        <div class="card p-8 mb-12 animate__animated animate__fadeInUp bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg">
+            <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6" data-translate="about_section"></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                    <img src="/jaafarennassiri/images/office.png" alt="Our Office" class="w-full rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3 md:pl-6">
+                    <p class="text-lg leading-relaxed text-gray-800 mb-4" data-translate="about_details"></p>
+                    <ul class="list-disc list-inside text-gray-700 text-base">
+                        <li data-translate="service_private_international_law"></li>
+                        <li data-translate="service_labor_law"></li>
+                        <li data-translate="service_family_law"></li>
+                        <li data-translate="service_commercial_cases"></li>
+                        <li data-translate="service_criminal_law"></li>
+                        <li data-translate="service_civil_law"></li>
+                        <li data-translate="service_real_estate_law"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
+        
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="card p-8 animate__animated animate__fadeInLeft">
-                <h2 class="serif-font" data-translate="contact"></h2>
-                <div class="space-y-4">
-                    <div class="contact-item">
-                        <i data-feather="map-pin" class="w-6 h-6"></i>
-                        <p data-translate="address"></p>
+            <div class="card p-8 animate__animated animate__fadeInLeft bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg">
+                <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6" data-translate="contact"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Address -->
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow p-4 transition hover:shadow-lg">
+                        <i data-feather="map-pin" class="w-8 h-8 text-blue-900 mr-4"></i>
+                        <p class="text-gray-700 text-base" data-translate="address">Block 1 No.121 Meknes Street, Industrial District, Agadir</p>
                     </div>
-                    <div class="contact-item">
-                        <i data-feather="phone" class="w-6 h-6"></i>
-                        <p data-translate="phone"></p>
+                    <!-- Phone -->
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow p-4 transition hover:shadow-lg">
+                        <i data-feather="phone" class="w-8 h-8 text-blue-900 mr-4"></i>
+                        <p class="text-gray-700 text-base" data-translate="phone">06 63 75 77 58</p>
                     </div>
-                    <div class="contact-item">
-                        <i data-feather="mail" class="w-6 h-6"></i>
-                        <p>jaafarennassiri@gmail.com</p>
+                    <!-- Email -->
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow p-4 transition hover:shadow-lg">
+                        <span class="w-8 h-8 flex items-center justify-center mr-4">
+                            ✉️
+                        </span>
+                        <p class="text-gray-700 text-sm">jaafarennassiri@gmail.com</p>
                     </div>
+                    <!-- WhatsApp -->
                     <a href="https://wa.me/212663757758" target="_blank" rel="noopener noreferrer" 
-                       class="contact-item text-green-600 hover:text-green-700">
-                        <i data-feather="message-circle" class="w-6 h-6"></i>
-                        <p data-translate="whatsapp"></p>
+                       class="contact-item flex items-center bg-white rounded-lg shadow p-4 text-green-600 transition hover:shadow-lg hover:text-green-700">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                             alt="WhatsApp Logo" class="w-8 h-8 mr-4">
+                        <p class="text-gray-700 text-base" data-translate="whatsapp">WhatsApp: +212 663 757 758</p>
                     </a>
                 </div>
             </div>
+                                       
 
             <div class="card p-8 animate__animated animate__fadeInRight">
                 <h2 class="serif-font" data-translate="business_hours"></h2>
@@ -272,66 +296,66 @@
             </div>
         </div>
 
-        <div class="card p-8 animate__animated animate__fadeInUp">
-            <h2 class="serif-font" data-translate="reviews"></h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+        <div class="card p-4 animate__animated animate__fadeInUp">
+            <h2 class="serif-font text-xl font-bold mb-6" data-translate="reviews">Reviews</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="review-card transform transition-all duration-200 hover:scale-105 hover:shadow-md">
+                    <div class="flex items-start mb-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-medium mr-3">
                             DE
                         </div>
                         <div>
-                            <h3 class="font-semibold text-lg">Daria Emmerich</h3>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <h3 class="font-medium text-base">Daria Emmerich</h3>
+                            <div class="text-sm text-yellow-500">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
-                    <p class="text-lg italic mb-4">"Jaafar is a very nice, helpful and professional lawyer. Speaks English well and is always helpful. I felt well represented and would ask him for help again at any time."</p>
-                    <p class="text-sm text-gray-600">a year ago</p>
+                    <p class="text-sm italic mb-3">"Jaafar is a very nice, helpful and professional lawyer. Speaks English well and is always helpful. I felt well represented and would ask him for help again at any time."</p>
+                    <p class="text-xs text-gray-500">a year ago</p>
                 </div>
-
-                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+        
+                <div class="review-card transform transition-all duration-200 hover:scale-105 hover:shadow-md">
+                    <div class="flex items-start mb-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-medium mr-3">
                             LI
                         </div>
                         <div>
-                            <h3 class="font-semibold text-lg">Léo Idir</h3>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <h3 class="font-medium text-base">Léo Idir</h3>
+                            <div class="text-sm text-yellow-500">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
-                    <p class="text-lg italic mb-4">"I had the privilege of working with Jaafar on my father's legal case, and I cannot speak highly enough of his professionalism and expertise. From the very beginning, Jaafar demonstrated a deep understanding of the law..."</p>
-                    <p class="text-sm text-gray-600">a month ago</p>
+                    <p class="text-sm italic mb-3">"I had the privilege of working with Jaafar on my father's legal case, and I cannot speak highly enough of his professionalism and expertise. From the very beginning, Jaafar demonstrated a deep understanding of the law..."</p>
+                    <p class="text-xs text-gray-500">a month ago</p>
                 </div>
-
-                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+        
+                <div class="review-card transform transition-all duration-200 hover:scale-105 hover:shadow-md">
+                    <div class="flex items-start mb-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-medium mr-3">
                             CM
                         </div>
                         <div>
-                            <h3 class="font-semibold text-lg">Claudio Massei</h3>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <h3 class="font-medium text-base">Claudio Massei</h3>
+                            <div class="text-sm text-yellow-500">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
-                    <p class="text-lg italic mb-4">"Great lawyer, helped me get out of trouble with competence. He knows his job very well! Speaks excellent English, highly recommended."</p>
-                    <p class="text-sm text-gray-600">2 months ago</p>
+                    <p class="text-sm italic mb-3">"Great lawyer, helped me get out of trouble with competence. He knows his job very well! Speaks excellent English, highly recommended."</p>
+                    <p class="text-xs text-gray-500">2 months ago</p>
                 </div>
-
-                <div class="review-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+        
+                <div class="review-card transform transition-all duration-200 hover:scale-105 hover:shadow-md">
+                    <div class="flex items-start mb-3">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-medium mr-3">
                             PS
                         </div>
                         <div>
-                            <h3 class="font-semibold text-lg">Piotr Antoni Sporek</h3>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <h3 class="font-medium text-base">Piotr Antoni Sporek</h3>
+                            <div class="text-sm text-yellow-500">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
-                    <p class="text-lg italic mb-4">"Thank you very much for the information provided 🇵🇱 Chokran 🙏"</p>
-                    <p class="text-sm text-gray-600">2 months ago</p>
+                    <p class="text-sm italic mb-3">"Thank you very much for the information provided 🇵🇱 Chokran 🙏"</p>
+                    <p class="text-xs text-gray-500">2 months ago</p>
                 </div>
             </div>
-        </div>
+        </div>        
     </main>
 
     <footer class="bg-blue-900 text-white py-12">
@@ -356,8 +380,14 @@
             ar: {
                 title: 'الأستاذ جعفر الناصري',
                 subtitle: 'محامي لدى محكمة الاستئناف بأكادير',
-                about_section: 'عن الأستاذ جعفر الناصري',
-                about_details: 'الأستاذ جعفر الناصري محام ذو خبرة في القانون المدني وقانون الأسرة والقانون التجاري.',
+                about_details: 'يقدم مكتبنا مجموعة شاملة من الخدمات القانونية المصممة لتلبية احتياجات عملائنا. نحن ملتزمون بتقديم مشورة قانونية دقيقة وتمثيل عملائنا لتحقيق أفضل النتائج.',
+                service_private_international_law: 'القانون الدولي الخاص',
+                service_labor_law: 'قانون الشغل',
+                service_family_law: 'قانون الأسرة والأحوال الشخصية',
+                service_commercial_cases: 'القضايا التجارية والإدارية',
+                service_criminal_law: 'القانون الجنائي',
+                service_civil_law: 'القانون المدني',
+                service_real_estate_law: 'القانون العقاري',
                 contact: 'معلومات الاتصال',
                 address: 'بلوك 1 رقم 121 زنقة مكناس الحي الصناعي اكادير',
                 phone: '58 77 75 63 06',
@@ -367,13 +397,19 @@
                 weekday_hours: 'من الاثنين إلى الجمعة: 9:00 صباحًا - 5:00 مساءً',
                 saturday_hours: 'السبت: 10:00 صباحًا - 2:00 مساءً',
                 sunday_hours: 'الأحد: مغلق',
-                reviews: 'آراء العملاء'
+                reviews: 'آراء زبائننا'
             },
             fr: {
                 title: 'Maître Jaafar ENNASSIRI',
                 subtitle: 'Avocat près la Cour d\'Appel d\'Agadir',
-                about_section: 'À propos de Maître Jaafar Ennassiri',
-                about_details: 'Maître Jaafar Ennassiri est un avocat expérimenté spécialisé en droit civil et commercial.',
+                about_details: 'Notre cabinet propose une gamme complète de services juridiques adaptés aux besoins de nos clients. Nous nous engageons à fournir des conseils juridiques précis et à représenter nos clients pour obtenir les meilleurs résultats.',
+                service_private_international_law: 'Droit international privé',
+                service_labor_law: 'Droit du travail',
+                service_family_law: 'Droit de la famille et du statut personnel',
+                service_commercial_cases: 'Affaires commerciales et administratives',
+                service_criminal_law: 'Droit pénal',
+                service_civil_law: 'Droit civil',
+                service_real_estate_law: 'Droit immobilier',
                 contact: 'Coordonnées',
                 address: 'Bloc 1 N°121 Rue Meknès Quartier Industriel, Agadir',
                 phone: '06 63 75 77 58',
@@ -388,8 +424,14 @@
             en: {
                 title: 'Attorney Jaafar ENNASSIRI',
                 subtitle: 'Lawyer at the Court of Appeal of Agadir',
-                about_section: 'About Attorney Jaafar Ennassiri',
-                about_details: 'Jaafar Ennassiri is an experienced attorney specializing in civil law and family law, dedicated to providing exceptional legal services.',
+                about_details: 'Our office offers a comprehensive range of legal services tailored to meet our clients’ needs. We are dedicated to providing accurate legal advice and representing our clients to achieve the best outcomes.',
+                service_private_international_law: 'Private International Law',
+                service_labor_law: 'Labor Law',
+                service_family_law: 'Family Law and Personal Status',
+                service_commercial_cases: 'Commercial and Administrative Cases',
+                service_criminal_law: 'Criminal Law',
+                service_civil_law: 'Civil Law',
+                service_real_estate_law: 'Real Estate Law',
                 contact: 'Contact Information',
                 address: 'Block 1 No.121 Meknes Street, Industrial District, Agadir',
                 phone: '06 63 75 77 58',
