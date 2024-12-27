@@ -217,17 +217,12 @@
 
     <main class="container mx-auto px-4 py-16 -mt-20 relative z-10">
         <div class="card p-8 mb-12 animate__animated animate__fadeInUp bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg">
-            <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6" data-translate="about_section"></h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <!-- Image Section -->
-                <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6"> <!-- Reduced width and added margin-right -->
-                    <img src="/jaafarennassiri/images/office.png" alt="Our Office" 
-                         class="w-full rounded-lg shadow-md object-cover aspect-[4/3]">
-                </div>
+            <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6 text-right" data-translate="about_section"></h2>
+            <div class="flex flex-col-reverse md:flex-row items-center rtl">
                 <!-- Text Section -->
-                <div class="md:w-3/4">
+                <div class="md:w-3/4 md:pl-6 text-right">
                     <p class="text-lg leading-relaxed text-gray-800 mb-4" data-translate="about_details"></p>
-                    <ul class="list-disc list-inside text-gray-700 text-base space-y-2">
+                    <ul class="list-disc list-inside text-gray-700 text-base space-y-2 pr-6">
                         <li data-translate="service_private_international_law"></li>
                         <li data-translate="service_labor_law"></li>
                         <li data-translate="service_family_law"></li>
@@ -237,48 +232,53 @@
                         <li data-translate="service_real_estate_law"></li>
                     </ul>
                 </div>
+                <!-- Image Section -->
+                <div class="md:w-1/4 mb-4 md:mb-0 md:ml-6">
+                    <img src="/jaafarennassiri/images/office.png" alt="Our Office" 
+                         class="w-full rounded-lg shadow-md object-cover aspect-[4/3]">
+                </div>
             </div>
-        </div>                   
+        </div>                    
         
         <div class="grid md:grid-cols-2 gap-8">
             <div class="card p-8 animate__animated animate__fadeInLeft bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg">
-                <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6" data-translate="contact">Contact Information</h2>
+                <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6 text-right" data-translate="contact">معلومات الاتصال</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Address -->
-                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg">
-                        <img src="/jaafarennassiri/images/icons/google-maps-pin.png" alt="Google Maps Pin" class="w-6 h-6 mr-4">
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg rtl">
+                        <img src="/jaafarennassiri/images/icons/google-maps-pin.png" alt="Google Maps Pin" class="w-6 h-6 ml-4"> <!-- Use margin-left for spacing -->
                         <div>
-                            <p class="text-gray-700 text-sm font-semibold" data-translate="address">Block 1 No.121 Meknes Street</p>
-                            <p class="text-gray-600 text-xs" data-translate="address_additional">Industrial District, Agadir</p>
+                            <p class="text-gray-700 text-sm font-semibold text-right" data-translate="address">بلوك 1 رقم 121 زنقة مكناس</p>
+                            <p class="text-gray-600 text-xs text-right" data-translate="address_additional">الحي الصناعي، أكادير</p>
                         </div>
                     </div>
                     <!-- Phone -->
-                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg">
-                        <img src="/jaafarennassiri/images/icons/phone-icon.png" alt="Phone Icon" class="w-6 h-6 mr-4">
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg rtl">
+                        <img src="/jaafarennassiri/images/icons/phone-icon.png" alt="Phone Icon" class="w-6 h-6 ml-4">
                         <div>
-                            <p class="text-gray-700 text-sm font-semibold" data-translate="phone">06 63 75 77 58</p>
-                            <p class="text-gray-600 text-xs" data-translate="phone_additional">Call us anytime</p>
+                            <p class="text-gray-700 text-sm font-semibold text-right" data-translate="phone">58 77 75 63 06</p>
+                            <p class="text-gray-600 text-xs text-right" data-translate="phone_additional">اتصل بنا في أي وقت</p>
                         </div>
                     </div>
                     <!-- Email -->
-                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg">
-                        <img src="/jaafarennassiri/images/icons/gmail-icon.png" alt="Gmail Logo" class="w-6 h-6 mr-4">
+                    <div class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg rtl">
+                        <img src="/jaafarennassiri/images/icons/gmail-icon.png" alt="Gmail Logo" class="w-6 h-6 ml-4">
                         <div>
-                            <p class="text-gray-700 text-sm font-semibold" data-translate="email">jaafarennassiri@gmail.com</p>
-                            <p class="text-gray-600 text-xs" data-translate="email_additional">Send us an email</p>
+                            <p class="text-gray-700 text-sm font-semibold text-right" data-translate="email">jaafarennassiri@gmail.com</p>
+                            <p class="text-gray-600 text-xs text-right" data-translate="email_additional">أرسل لنا بريداً إلكترونياً</p>
                         </div>
                     </div>
                     <!-- WhatsApp -->
                     <a href="https://wa.me/212663757758" target="_blank" rel="noopener noreferrer" 
-                       class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg hover:text-green-700">
-                        <img src="/jaafarennassiri/images/icons/whatsapp.png" alt="WhatsApp Logo" class="w-6 h-6 mr-4">
+                       class="contact-item flex items-center bg-white rounded-lg shadow-md p-4 transition hover:shadow-lg hover:text-green-700 rtl">
+                        <img src="/jaafarennassiri/images/icons/whatsapp.png" alt="WhatsApp Logo" class="w-6 h-6 ml-4">
                         <div>
-                            <p class="text-gray-700 text-sm font-semibold" data-translate="whatsapp">WhatsApp: +212 663 757 758</p>
-                            <p class="text-gray-600 text-xs" data-translate="whatsapp_additional">Chat with us on WhatsApp</p>
+                            <p class="text-gray-700 text-sm font-semibold text-right" data-translate="whatsapp">تواصل معنا عبر الواتساب</p>
+                            <p class="text-gray-600 text-xs text-right" data-translate="whatsapp_additional">تواصل معنا عبر الواتساب</p>
                         </div>
                     </a>
                 </div>
-            </div>
+            </div>            
                                                                        
 
             <div class="card p-8 animate__animated animate__fadeInRight">
