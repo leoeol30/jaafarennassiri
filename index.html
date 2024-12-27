@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         body {
@@ -216,6 +217,16 @@
                 height: 150px;
             }
         }
+        .card ul li:hover {
+            background-color: rgba(237, 242, 247, 1); /* Light gray hover effect */
+        }
+        .card ul li i {
+            transition: transform 0.2s ease;
+        }
+        .card ul li:hover i {
+            transform: rotate(15deg); /* Subtle rotation on hover */
+        }
+        
     </style>
 </head>
 <body class="ltr">
@@ -303,26 +314,32 @@
                         </div>
                     </a>
                 </div>
-            </div>         
-                                                                       
-
-            <div class="card p-8 animate__animated animate__fadeInRight">
-                <h2 class="serif-font" data-translate="business_hours"></h2>
+            </div>                                                              
+            <div class="card p-8 animate__animated animate__fadeInRight bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-lg">
+                <!-- Heading -->
+                <h2 class="serif-font text-2xl font-bold text-blue-900 mb-6" data-translate="business_hours">
+                    Business Hours
+                </h2>
+                <!-- Hours List -->
                 <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
-                        <span data-translate="weekday_hours"></span>
+                    <!-- Weekdays -->
+                    <li class="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
+                        <i class="fas fa-clock w-6 h-6 text-blue-900 mr-3"></i>
+                        <span class="text-gray-800 font-medium" data-translate="weekday_hours"></span>
                     </li>
-                    <li class="flex items-center">
-                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
-                        <span data-translate="saturday_hours"></span>
+                    <!-- Saturday -->
+                    <li class="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
+                        <i class="fas fa-clock w-6 h-6 text-blue-900 mr-3"></i>
+                        <span class="text-gray-800 font-medium" data-translate="saturday_hours"></span>
                     </li>
-                    <li class="flex items-center">
-                        <i data-feather="clock" class="w-5 h-5 mr-3 text-blue-900"></i>
-                        <span data-translate="sunday_hours"></span>
+                    <!-- Sunday -->
+                    <li class="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
+                        <i class="fas fa-clock w-6 h-6 text-blue-900 mr-3"></i>
+                        <span class="text-gray-800 font-medium" data-translate="sunday_hours"></span>
                     </li>
                 </ul>
             </div>
+
         </div>
 
         <div class="card p-8 my-12 animate__animated animate__fadeInUp">
