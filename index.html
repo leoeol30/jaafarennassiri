@@ -602,8 +602,18 @@
             updateContent(e.target.value);
         });
 
-        // Initialize with Arabic language
-        updateContent('ar');
+        // Detect browser's default language
+        const browserLang = navigator.language || navigator.userLanguage;
+
+        // Map browser language to available languages
+        const availableLanguages = ['ar', 'fr', 'en'];
+        const defaultLang = availableLanguages.includes(browserLang.split('-')[0])
+            ? browserLang.split('-')[0]
+            : 'en'; // Fallback to English if browser language is not available
+
+        // Initialize with browser's language or fallback
+        updateContent(defaultLang);
+        document.getElementById('languageSelect').value = defaultLang;
 
         // Add smooth scroll behavior for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
